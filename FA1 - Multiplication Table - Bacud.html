@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+  </style>
+
+  <div id="tableCase"></div>
+
+  <script>
+    var n;
+    var m;
+
+    do {
+      n = parseInt(prompt("Enter the number for rows (from 2 to 10):"));
+      m = parseInt(prompt("Enter the number for columns (from 2 to 10):"));
+    } while (n < 2 || m < 2 || n > 10 || m > 10);
+
+    let tableHTML = "<table>";
+
+    for (let i = 1; i <= n; i++) {
+      tableHTML += "<tr>";
+      for (let x = 1; x <= m; x++) {
+        const result = i * x;
+        tableHTML += "<td>" + result + "</td>";
+      }
+      tableHTML += "</tr>";
+    }
+
+    tableHTML += "</table>";
+
+    document.getElementById('tableCase').innerHTML = tableHTML;
+  </script>
+</body>
+</html>
